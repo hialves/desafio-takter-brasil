@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/entity/base.entity';
 
 export enum ClienteGeneroEnum {
@@ -7,12 +8,17 @@ export enum ClienteGeneroEnum {
 }
 
 export class Cliente extends BaseEntity {
-  id: string;
+  @ApiProperty()
   cpf: string;
+  @ApiProperty()
   nome: string;
+  @ApiProperty()
   email: string;
+  @ApiProperty()
   dataDeNascimento: string;
+  @ApiProperty()
   genero: ClienteGeneroEnum;
+  @ApiProperty()
   rendaMensal: number;
 
   constructor(cliente: Partial<Omit<Cliente, keyof BaseEntity>>) {

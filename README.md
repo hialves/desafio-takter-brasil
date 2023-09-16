@@ -58,6 +58,13 @@ $ yarn prod
 $ docker-compose up
 ```
 
+## Swagger
+
+Se a porta for mantida como 3000
+[Swagger](http://localhost:3000/)
+ou
+[http://localhost:3000/](http://localhost:3000/)
+
 ## Test
 
 ```bash

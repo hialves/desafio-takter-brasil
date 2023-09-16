@@ -1,15 +1,25 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/entity/base.entity';
 
 export class Produto extends BaseEntity {
+  @ApiProperty()
   nome: string;
+  @ApiProperty()
   susep: string;
+  @ApiProperty()
   expiracaoDeVenda: string;
-  valorMinimoAporteInicial: number; // valor mínimo de aporte no momento da contração
-  valorMinimoAporteExtra: number; // valor mínimo do aporte extra
-  idadeDeEntrada: number; // idade mínima para comprar o produto
-  idadeDeSaida: number; // idade máxima para começar a usufruir do benefício
-  carenciaInicialDeResgate: number; // em dias - carência para realizar o primeiro resgate
-  carenciaEntreResgates: number; // em dias - carência para realizar outro resgate após
+  @ApiProperty()
+  valorMinimoAporteInicial: number;
+  @ApiProperty()
+  valorMinimoAporteExtra: number;
+  @ApiProperty()
+  idadeDeEntrada: number;
+  @ApiProperty()
+  idadeDeSaida: number;
+  @ApiProperty()
+  carenciaInicialDeResgate: number;
+  @ApiProperty()
+  carenciaEntreResgates: number;
 
   constructor(produto: Partial<Omit<Produto, keyof BaseEntity>>) {
     super();

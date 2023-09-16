@@ -1,10 +1,16 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/entity/base.entity';
 
 export class Plano extends BaseEntity {
+  @ApiProperty()
   idCliente: string;
+  @ApiProperty()
   idProduto: string;
+  @ApiProperty()
   aporte: number;
+  @ApiProperty()
   dataDaContratacao: string;
+  @ApiProperty()
   idadeDeAposentadoria: number;
 
   constructor(plano: Partial<Plano>) {
