@@ -1,0 +1,12 @@
+version: '3.8'
+name: teste-nodejs
+
+services:
+  app:
+    build: .
+    container_name: teste-nodejs-api
+    tty: true
+    env_file:
+      - .env
+    ports:
+      - '${PORT}:${PORT}'
