@@ -22,51 +22,56 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Teste aplicado para a Takter Brasil
 
-## Installation
+## Requerimentos
+
+- Node 18 (caso localmente)
+- Docker e/ou Docker compose
+
+## Instalação
 
 ```bash
 $ yarn install
 ```
 
-## Running the app
+## Executando a aplicação
+
+### Node
 
 ```bash
 # development
-$ yarn run start
+$ yarn start
 
 # watch mode
-$ yarn run start:dev
+$ yarn dev
 
 # production mode
-$ yarn run start:prod
+$ yarn prod
+```
+
+### Docker
+
+```bash
+$ docker-compose up
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
+$ yarn test
 
 # test coverage
-$ yarn run test:cov
+$ yarn test:cov
 ```
 
-## Support
+## Links
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Autor - [Hiago A.](https://www.linkedin.com/in/hiago-alves-dev/)
+- GitHub - [https://github.com/hialves](https://github.com/hialves)
 
 ## License
 

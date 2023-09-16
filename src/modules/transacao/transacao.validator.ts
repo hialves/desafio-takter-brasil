@@ -30,9 +30,11 @@ export class TransacaoValidator implements OnModuleInit {
 
     // Existência do registro
     const plano = this.planoService.findOne(dto.idPlano);
-    if (!plano) throw new NotFoundException();
+    if (!plano)
+      throw new NotFoundException(validatorMessages.plano.naoEncontrado);
     const produto = this.produtoService.findOne(plano.idProduto);
-    if (!produto) throw new NotFoundException();
+    if (!produto)
+      throw new NotFoundException(validatorMessages.produto.naoEncontrado);
 
     // Plano cancelado
     if (this.planoService.isCancelled(dto.idPlano))
@@ -43,7 +45,7 @@ export class TransacaoValidator implements OnModuleInit {
     const valueSatisfiesMinimum =
       dto.valorAporte >= produto.valorMinimoAporteExtra;
     if (valueSatisfiesMinimum)
-      errors.push(validatorMessages.produto.aporteBelowMinimum);
+      errors.push(validatorMessages.produto.aporteAbaixoMinimo);
 
     return errors;
   }
@@ -53,9 +55,11 @@ export class TransacaoValidator implements OnModuleInit {
 
     // Existência do registro
     const plano = this.planoService.findOne(dto.idPlano);
-    if (!plano) throw new NotFoundException();
+    if (!plano)
+      throw new NotFoundException(validatorMessages.plano.naoEncontrado);
     const produto = this.produtoService.findOne(plano.idProduto);
-    if (!produto) throw new NotFoundException();
+    if (!produto)
+      throw new NotFoundException(validatorMessages.produto.naoEncontrado);
 
     // Plano cancelado
     if (this.planoService.isCancelled(dto.idPlano))

@@ -12,7 +12,7 @@ import { PlanoModule } from '../plano/plano.module';
   providers: [
     TransacaoService,
     TransacaoValidator,
-    { provide: TransacaoRepository, useValue: [] },
+    { provide: TransacaoRepository, useValue: new TransacaoRepository([]) },
   ],
 })
 export class TransacaoModule {}
