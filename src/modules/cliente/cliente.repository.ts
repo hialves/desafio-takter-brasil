@@ -28,4 +28,16 @@ export class ClienteRepository {
   findByEmail(email: string): Cliente | undefined {
     return this.inMemoryDb.find((item) => item.email === email);
   }
+
+  update(id: string, data: Partial<Cliente>) {
+    const index = this.inMemoryDb.findIndex((item) => item.id === id);
+    if (index < 0) return null;
+
+    Object.assign(this.inMemoryDb[index], {
+      ...this.inMemoryDb[index],
+      ...data,
+    });
+
+    return this.inMemoryDb[index];
+  }
 }

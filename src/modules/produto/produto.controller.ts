@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch } from '@nestjs/common';
 import { ProdutoService } from './produto.service';
 import { CreateProdutoDto } from './dto/create-produto.dto';
 import { CreateResponse } from 'src/common/response/create.response';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Produto } from './entities/produto.entity';
+import { UpdateProdutoDto } from './dto/update-produto.dto';
 
 @ApiTags('Produto')
 @Controller('produto')
@@ -27,5 +28,11 @@ export class ProdutoController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.produtoService.findOne(id);
+  }
+
+  @ApiResponse({ type: Produto })
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() dto: UpdateProdutoDto) {
+    return this.produtoService.update(id, dto);
   }
 }

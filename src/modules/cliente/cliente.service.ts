@@ -25,4 +25,8 @@ export class ClienteService {
   findOne(id: string) {
     return this.clienteRepository.findOne(id);
   }
+
+  update(id: string, data: Partial<Cliente>) {
+    return this.clienteRepository.update(id, data);
+  }
 }

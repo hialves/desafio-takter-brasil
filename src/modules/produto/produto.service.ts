@@ -25,4 +25,8 @@ export class ProdutoService {
   findOne(id: string) {
     return this.produtoRepository.findOne(id);
   }
+
+  update(id: string, data: Partial<Produto>) {
+    return this.produtoRepository.update(id, data);
+  }
 }
